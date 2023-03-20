@@ -37,3 +37,20 @@ function generateUniqueId() {
 
   return `id-${timestamp}-${hexadecimalString}`;
 }
+
+function chatStripe (isAi, value, uniqueID) {
+  return (
+    `
+      <div class='wrapper ${isAi && 'ai'}'>
+        <div class="chat">
+          <div className="profile">
+            <img
+              src="${isAi ? bot : user}"
+              ALT="${isAi ? 'bot' : 'user'}"
+            >
+          </div>
+        </div>
+      </div>
+    `
+  )
+}
